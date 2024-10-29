@@ -21,25 +21,25 @@ const projects = ref([
   {
     title: 'Plataforma de Cine',
     description: 'Una aplicación web para visualizar el catálogo de películas en cartelera y gestionar reservas.',
-    image: './src/assets/cine.png?height=200&width=300',
+    image: '../assets/cine.png?height=200&width=300',
     url: 'https://github.com/Guiller022005/CineCampus',
   },
   {
     title: 'Plataforma de E-commerce',
     description: 'Una solución full-stack de comercio electrónico con gestión de inventario en tiempo real.',
-    image: './src/assets/ecomerce.png?height=200&width=300',
+    image: '../assets/ecomerce.png?height=200&width=300',
     url: 'https://guiller022005.github.io/ecommerCampusM1/?id=aps',
   },
   {
     title: 'SpaceX',
     description: 'Aplicación interactiva que muestra misiones espaciales, lanzamientos y vehículos de SpaceX.',
-    image: './src/assets/spaceX.png?height=200&width=300',
+    image: '../assets/spaceX.png?height=200&width=300',
     url: 'https://guiller022005.github.io/SpaceX/',
   },
   {
     title: 'Foods',
     description: 'Aplicación interactiva que muestra misiones espaciales, lanzamientos y vehículos de SpaceX.',
-    image: './src/assets/foodSite.png?height=200&width=300',
+    image: '../assets/foodSite.png?height=200&width=300',
     url: 'https://guiller022005.github.io/proyectoWeb/',
   }
 ]);
