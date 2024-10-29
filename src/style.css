@@ -337,6 +337,18 @@ footer {
   .skills-grid {
     grid-template-columns: repeat(3, 1fr); /* 3 columnas en tablets */
   }
+  .projects-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /* Ajuste para mostrar 3 columnas en pantallas grandes */
+    justify-content: center; /* Centra los proyectos en la cuadrícula */
+    gap: 2rem; /* Espaciado entre los elementos */
+  }
+  
+  /* Ajuste en los elementos individuales de los proyectos */
+  .project-item {
+    max-width: 300px; /* Limita el ancho de cada tarjeta */
+    margin: 0 auto; /* Centra cada tarjeta */
+  }
 
   .profile {
     flex-direction: column;
