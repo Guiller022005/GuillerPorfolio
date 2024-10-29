@@ -22,20 +22,32 @@
 
 <script setup>
 import { ref } from 'vue';
+import nodeIcon from '../assets/node.svg';
+import expressIcon from '../assets/nodeExpress.svg';
+import vueIcon from '../assets/vue.svg';
+import reactIcon from '../assets/react.svg';
+import javascriptIcon from '../assets/javascript.svg';
+import cppIcon from '../assets/c++.svg';
+import mysqlIcon from '../assets/mysql.svg';
+import mongoIcon from '../assets/mongo.svg';
+import pythonIcon from '../assets/python.svg';
+import apiIcon from '../assets/api.svg';
+import responsiveIcon from '../assets/responsive.svg';
+import dockerIcon from '../assets/docker.svg';
 
 const skills = ref([
-  { image: '../assets/node.svg?height=200&width=300', name: 'Node.js', info: 'Crea aplicaciones rápidas en servidores.', flipped: false },
-  { image: '../assets/nodeExpress.svg?height=200&width=300', name: 'Express', info: 'Facilita la creación de sitios web y servicios.', flipped: false },
-  { image: '../assets/vue.svg?height=200&width=300', name: 'Vue.js', info: 'Hace las páginas web más rápidas e interactivas.', flipped: false },
-  { image: '../assets/react.svg?height=200&width=300', name: 'React.js', info: 'Hace las páginas web más rápidas e interactivas.', flipped: false },
-  { image: '../assets/javascript.svg?height=200&width=300', name: 'JavaScript', info: 'Da vida a las páginas web con interacción.', flipped: false },
-  { image: '../assets/c++.svg?height=200&width=300', name: 'C++', info: 'Crea programas rápidos como videojuegos.', flipped: false },
-  { image: '../assets/mysql.svg?height=200&width=300', name: 'MySQL', info: 'Almacena y organiza información en bases de datos.', flipped: false },
-  { image: '../assets/mongo.svg?height=200&width=300', name: 'MongoDB', info: 'Guarda grandes volúmenes de datos de manera flexible.', flipped: false },
-  { image: '../assets/python.svg?height=200&width=300', name: 'Python', info: 'Lenguaje fácil para múltiples tareas, como análisis de datos.', flipped: false },
-  { image: '../assets/api.svg?height=200&width=300', name: 'APIs RESTful', info: 'Permiten que aplicaciones se comuniquen entre sí.', flipped: false },
-  { image: './src/assets/responsive.svg?height=200&width=300', name: 'Sitios web responsive', info: 'Adaptan un sitio para verse bien en cualquier dispositivo.', flipped: false },
-  { image: './src/assets/docker.svg?height=200&width=300', name: 'Docker', info: 'Adaptan un sitio para verse bien en cualquier dispositivo.', flipped: false },
+  { image: nodeIcon, name: 'Node.js', info: 'Crea aplicaciones rápidas en servidores.', flipped: false },
+  { image: expressIcon, name: 'Express', info: 'Facilita la creación de sitios web y servicios.', flipped: false },
+  { image: vueIcon, name: 'Vue.js', info: 'Hace las páginas web más rápidas e interactivas.', flipped: false },
+  { image: reactIcon, name: 'React.js', info: 'Hace las páginas web más rápidas e interactivas.', flipped: false },
+  { image: javascriptIcon, name: 'JavaScript', info: 'Da vida a las páginas web con interacción.', flipped: false },
+  { image: cppIcon, name: 'C++', info: 'Crea programas rápidos como videojuegos.', flipped: false },
+  { image: mysqlIcon, name: 'MySQL', info: 'Almacena y organiza información en bases de datos.', flipped: false },
+  { image: mongoIcon, name: 'MongoDB', info: 'Guarda grandes volúmenes de datos de manera flexible.', flipped: false },
+  { image: pythonIcon, name: 'Python', info: 'Lenguaje fácil para múltiples tareas, como análisis de datos.', flipped: false },
+  { image: apiIcon, name: 'APIs RESTful', info: 'Permiten que aplicaciones se comuniquen entre sí.', flipped: false },
+  { image: responsiveIcon, name: 'Sitios web responsive', info: 'Adaptan un sitio para verse bien en cualquier dispositivo.', flipped: false },
+  { image: dockerIcon, name: 'Docker', info: 'Adaptan un sitio para verse bien en cualquier dispositivo.', flipped: false },
 ]);
 
 const flipCard = (skill) => {
