@@ -1,126 +1,107 @@
-# Portfolio Personal - Guiller
+# José Guillermo Paúl Díaz | Portfolio Profesional
 
-## 📋 Descripción
+> **Frontend Developer & QA Automation Specialist**  
+> Creando interfaces web de alta fidelidad, con código testeado y arquitectura libre de regresiones (Zero-Defect Frontend).
 
-Este es mi portafolio personal desarrollado con Vue 3 y Vite, que presenta una interfaz moderna y responsive con un diseño elegante y profesional. El proyecto utiliza un esquema de colores basado en tonos azules y cuenta con animaciones suaves para mejorar la experiencia del usuario.
+---
+
+## 🌟 Visión del Portafolio
+
+Este portafolio representa la combinación estratégica entre **Ingeniería Frontend de Alto Impacto** (Vue 3, TypeScript, CSS Moderno, Accesibilidad y Rendimiento) y un **ADN riguroso de QA Automation** (Cypress, Playwright, Vitest, Test Charters y pruebas de API).
+
+### 🎯 Diferenciales Clave
+- **Modo QA Inspector Interactivo:** Alterna etiquetas `[data-testid]`, contratos de componentes y aserciones en vivo directamente en la interfaz.
+- **Live Test Runner Console:** Consola interactiva integrada que simula la ejecución en tiempo real de suites de pruebas con Vitest y Cypress.
+- **La Ventaja Híbrida (Frontend + QA):** Sección detallada que explica por qué un desarrollador con mentalidad de QA reduce regresiones y acelera el ciclo de entrega.
+- **Filtro Avanzado de Habilidades:** Clasificación dinámica entre Frontend & UI, QA & Test Automation, y Backend & DevOps.
+- **Proyectos con Criterios de Calidad:** Cada proyecto destaca el desafío técnico y la estrategia de aseguramiento de calidad aplicada.
+- **Portal de Contacto Rápido:** Copiado de correo en un clic, enlace directo a WhatsApp y formulario con validación reactiva.
+
+---
+
+## 🛠️ Stack Tecnológico
+
+| Capa | Tecnologías |
+| :--- | :--- |
+| **Frontend Core** | [Vue.js 3](https://vuejs.org/) (Composition API, Script Setup), [TypeScript](https://www.typescriptlang.org/), JavaScript ESNext |
+| **Herramientas de Build** | [Vite 5](https://vitejs.dev/), Vue-TSC |
+| **Estilos & UI** | Vanilla CSS Moderno, Design Tokens, Glassmorphism, Google Fonts (*Plus Jakarta Sans* & *JetBrains Mono*), Responsive Mobile-First |
+| **QA & Testing Arsenal** | Cypress (E2E), Playwright, Vitest (Unit/Component), Test Charters, k6 (Load Testing), axe-core (A11y), OWASP Awareness |
+| **Iconografía** | [Lucide Vue Next](https://lucide.dev/) |
+| **Backend & Base de Datos** | Node.js, Express, Docker, MySQL, MongoDB |
+
+---
 
 ## 🚀 Inicio Rápido
 
 ### Prerrequisitos
+- Node.js (versión 18.0.0 o superior)
+- npm o pnpm
 
-- Node.js (versión 14.0.0 o superior)
-- npm (incluido con Node.js)
+### Instalación y Ejecución
 
-### Instalación
+1. **Clonar el repositorio:**
+   ```bash
+   git clone https://github.com/Guiller022005/GuillerPorfolio.git
+   cd GuillerPorfolio
+   ```
 
-1. Clona el repositorio
+2. **Instalar dependencias:**
+   ```bash
+   npm install
+   ```
 
-```
-bashCopygit clone [URL-de-tu-repositorio]
-cd GUILLERPORFOLIO
-```
+3. **Iniciar el servidor de desarrollo:**
+   ```bash
+   npm run dev
+   ```
+   Abre tu navegador en: `http://localhost:5173/GuillerPorfolio/`
 
-1. Instala las dependencias
+4. **Compilar para producción (TypeScript + Bundle):**
+   ```bash
+   npm run build
+   ```
 
-```
-bash
+5. **Previsualizar el build de producción:**
+   ```bash
+   npm run preview
+   ```
 
-Copy
-
-npm install
-```
-
-1. Inicia el servidor de desarrollo
-
-```
-bash
-
-Copy
-
-npm run dev
-```
-
-1. Abre tu navegador y visita:
-
-```
-Copy
-
-http://localhost:5173/GUILLERPORFOLIO/
-```
-
-## 🛠️ Construido Con
-
-- [Vue 3](https://vuejs.org/) - Framework de JavaScript progresivo
-- [Vite](https://vitejs.dev/) - Build tool y servidor de desarrollo
-- [TypeScript](https://www.typescriptlang.org/) - Superset tipado de JavaScript
+---
 
 ## 📁 Estructura del Proyecto
 
-```
-CopyGUILLERPORFOLIO/
-├── src/
-│   ├── components/
-│   │   ├── Contact.vue
-│   │   ├── HelloWorld.vue
-│   │   ├── NavBar.vue
-│   │   ├── Profile.vue
-│   │   ├── Projects.vue
-│   │   └── Skills.vue
-│   ├── assets/
-│   ├── App.vue
-│   ├── main.js
-│   ├── main.ts
-│   └── shims-vue.d.ts
+```text
+GuillerPorfolio/
 ├── public/
-├── .vscode/
-├── node_modules/
-├── package.json
-├── vite.config.ts
-├── tsconfig.json
-├── tsconfig.node.tsbuildinfo
-└── README.md
+│   └── favicon.svg           # Monograma GP personalizado con acentos Cyan y Emerald
+├── src/
+│   ├── assets/               # Capturas de proyectos e iconos SVG
+│   ├── components/
+│   │   ├── Contact.vue       # Portal de contacto con copiado rápido de email y WhatsApp
+│   │   ├── NavBar.vue        # Barra fija frosted glass con toggle "QA Mode" y menú móvil
+│   │   ├── Profile.vue       # Hero section ejecutivo con chips flotantes e imagen estilizada
+│   │   ├── Projects.vue      # Galería de proyectos con filtros y QA Highlights
+│   │   ├── QaAdvantage.vue   # Comparativa y 4 pilares de la ventaja Frontend + QA
+│   │   ├── Skills.vue        # Matriz filtrable de habilidades Frontend, QA y Backend
+│   │   └── TestRunnerWidget.vue # Consola interactiva de ejecución de tests Vitest/Cypress
+│   ├── composables/
+│   │   └── useQaMode.ts      # Estado reactivo global del modo QA y runner de pruebas
+│   ├── App.vue               # Estructura principal con banner QA y efectos ambientales
+│   ├── main.ts               # Punto de entrada de la aplicación
+│   └── style.css             # Sistema de diseño, tokens CSS, glassmorphism y animaciones
+├── index.html                # Metadatos SEO, OpenGraph y tipografías Google
+├── package.json              # Dependencias y scripts
+├── tsconfig.json             # Configuración de TypeScript
+└── vite.config.ts            # Configuración de Vite y GitHub Pages
 ```
 
-## 🎨 Características y Diseño
+---
 
-### Diseño Responsive
+## 📬 Contacto Profesional
 
-- Diseño completamente responsive que se adapta a móviles, tablets y escritorio
-- Sistema de grid flexible para diferentes tamaños de pantalla
-- Menú de navegación adaptativo con soporte para móviles
-
-### Componentes Principales
-
-1. Header y Navegación
-   - Barra de navegación fija con fondo semi-transparente
-   - Menú responsive que se convierte en menú hamburguesa en móviles
-2. Perfil
-   - Imagen de perfil con borde personalizado y efectos de sombra
-   - Diseño flexible que se adapta a diferentes tamaños de pantalla
-   - Botón CTA (Call-to-Action) con efectos hover
-3. Sección de Habilidades
-   - Grid de 4 columnas en escritorio, 3 en tablets y 2 en móviles
-   - Tarjetas con efecto de rotación 3D al hover
-   - Diseño de dos caras con información adicional en el reverso
-4. Sección de Proyectos
-   - Grid responsive de proyectos
-   - Tarjetas con efectos de hover y escala
-   - Imágenes optimizadas con object-fit
-5. Sección de Soft Skills
-   - Diseño de pirámide en escritorio
-   - Se transforma en grid en dispositivos móviles
-   - Elementos interactivos con efectos hover
-6. Sección de Contacto
-   - Iconos sociales con efectos de transición
-   - Diseño centrado y limpio
-
-### Estilo Visual
-
-- Gradiente de fondo dinámico: `linear-gradient(to bottom right, #000203, #006DA3, #5CC9FF, #000203)`
-- Esquema de colores:
-  - Primario: `#006DA3`
-  - Secundario: `#0D456E`
-  - Fondos: `#2d3748`
-  - Texto: `#f7fafc`
-- Animaciones y transiciones suaves
-- Efectos de hover en elementos interactivos
+- **Nombre:** José Guillermo Paúl Díaz
+- **Correo:** [pauldiazjoseguillermo@gmail.com](mailto:pauldiazjoseguillermo@gmail.com)
+- **WhatsApp:** [+57 317 800 1452](https://wa.me/573178001452)
+- **LinkedIn:** [linkedin.com/in/josé-guillermo-paúl-díaz](https://linkedin.com/in/josé-guillermo-paúl-díaz)
+- **GitHub:** [github.com/Guiller022005](https://github.com/Guiller022005)
