@@ -2,10 +2,7 @@
   <section id="projects" class="projects-section" data-testid="projects-section">
     <!-- Header -->
     <div class="section-header">
-      <div class="section-pill" data-testid="projects-pill">
-        <Layers :size="16" />
-        <span>Portafolio de Trabajo</span>
-      </div>
+      <span class="section-kicker" data-testid="projects-kicker">Portafolio de Trabajo</span>
       <h2 class="section-title">
         Proyectos <span class="gradient-text">Destacados</span>
       </h2>
@@ -114,10 +111,10 @@
 
 <script setup lang="ts">
 import { ref, computed } from 'vue';
-import { Layers, ExternalLink, Github, ShieldCheck } from 'lucide-vue-next';
+import { ExternalLink, Github, ShieldCheck } from 'lucide-vue-next';
 
 // Assets
-import cine from '../assets/cine.png';
+import spinAppPng from '../assets/spinApp.png';
 import ecomercePng from '../assets/ecomerce.png';
 import spaceXPng from '../assets/spaceX.png';
 import foodSitePng from '../assets/foodSite.png';
@@ -146,23 +143,22 @@ const activeFilter = ref<ProjectCategory>('all');
 
 const filters: FilterItem[] = [
   { id: 'all', label: 'Todos los Proyectos' },
-  { id: 'frontend', label: 'Frontend Interactivo' },
+  { id: 'frontend', label: 'Frontend & Web Apps' },
   { id: 'fullstack', label: 'E-Commerce & Gestión' },
   { id: 'api', label: 'APIs & Datos Reactivos' }
 ];
 
 const projects = ref<Project[]>([
   {
-    id: 'cine-campus',
-    title: 'Plataforma de Cine (CineCampus)',
+    id: 'spinapp-tournament',
+    title: 'SpinApp — Gestión & Arbitraje de Tenis de Mesa',
     category: 'frontend',
-    categoryName: 'Frontend App',
-    description: 'Aplicación web interactiva para visualización de cartelera, selección dinámica de horarios y simulación de reservas cinematográficas en tiempo real.',
-    qaHighlight: 'Validación exhaustiva de formularios de reserva, manejo de estados asíncronos y pruebas de responsividad en múltiples dispositivos.',
-    image: cine,
-    url: 'https://github.com/Guiller022005/CineCampus',
-    githubUrl: 'https://github.com/Guiller022005/CineCampus',
-    tags: ['JavaScript', 'HTML5 / CSS3', 'Responsive UI', 'State Flow']
+    categoryName: 'Web App Oficial',
+    description: 'Plataforma integral para gestión y arbitraje en tiempo real de torneos de tenis de mesa reglamentarios (estándar ITTF). Incluye control de partidos en vivo, cuadros de eliminatorias y tabla dinámica de posiciones.',
+    qaHighlight: 'Lógica matemática de desempate y rotación de saques blindada contra fallos, autenticación robusta y diseño optimizado para dispositivos de arbitraje.',
+    image: spinAppPng,
+    url: 'https://spinapptorneo.web.app',
+    tags: ['Vue 3', 'TypeScript', 'Firebase / Firestore', 'Tailwind CSS', 'Vite']
   },
   {
     id: 'ecommerce-platform',
@@ -318,13 +314,13 @@ const filteredProjects = computed(() => {
   position: absolute;
   top: 12px;
   left: 12px;
-  background: rgba(8, 12, 22, 0.85);
+  background: rgba(8, 12, 22, 0.88);
   backdrop-filter: blur(8px);
-  border: 1px solid rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.12);
   padding: 0.25rem 0.65rem;
   border-radius: var(--radius-pill);
-  font-size: 0.72rem;
-  font-family: var(--font-mono);
+  font-size: 0.74rem;
+  font-weight: 600;
   color: var(--primary-light);
 }
 
@@ -344,12 +340,12 @@ const filteredProjects = computed(() => {
 }
 
 .tag-item {
-  font-family: var(--font-mono);
-  font-size: 0.72rem;
+  font-size: 0.74rem;
+  font-weight: 500;
   background: rgba(255, 255, 255, 0.05);
   border: 1px solid var(--border-subtle);
   color: var(--text-secondary);
-  padding: 0.2rem 0.55rem;
+  padding: 0.2rem 0.6rem;
   border-radius: var(--radius-xs);
 }
 
@@ -380,9 +376,8 @@ const filteredProjects = computed(() => {
   display: flex;
   align-items: center;
   gap: 0.4rem;
-  font-size: 0.76rem;
+  font-size: 0.78rem;
   font-weight: 700;
-  font-family: var(--font-mono);
   color: var(--accent-qa-light);
   margin-bottom: 0.3rem;
 }

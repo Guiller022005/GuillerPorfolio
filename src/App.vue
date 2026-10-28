@@ -110,8 +110,8 @@ const currentYear = computed(() => new Date().getFullYear());
   z-index: 999;
   padding: 0.55rem 1.5rem;
   box-shadow: 0 4px 20px rgba(16, 185, 129, 0.35);
-  font-family: var(--font-mono);
-  font-size: 0.8rem;
+  font-family: var(--font-sans);
+  font-size: 0.82rem;
 }
 
 .banner-inner {
@@ -146,6 +146,7 @@ const currentYear = computed(() => new Date().getFullYear());
   padding: 1px 5px;
   border-radius: 4px;
   font-weight: 700;
+  font-family: var(--font-mono);
 }
 
 .banner-actions {
@@ -167,8 +168,8 @@ const currentYear = computed(() => new Date().getFullYear());
   color: #040810;
   padding: 0.2rem 0.6rem;
   border-radius: var(--radius-pill);
-  font-family: var(--font-mono);
-  font-size: 0.72rem;
+  font-family: var(--font-sans);
+  font-size: 0.75rem;
   font-weight: 700;
   cursor: pointer;
 }
@@ -193,7 +194,8 @@ const currentYear = computed(() => new Date().getFullYear());
   color: var(--primary);
   text-decoration: none;
   font-size: 0.84rem;
-  font-family: var(--font-mono);
+  font-family: var(--font-sans);
+  font-weight: 500;
   transition: color var(--transition-fast);
 }
 

@@ -1,10 +1,7 @@
 <template>
   <section id="test-runner" class="test-runner-section" data-testid="test-runner-section">
     <div class="section-header">
-      <div class="section-pill qa-pill" data-testid="test-runner-pill">
-        <Terminal :size="16" />
-        <span>Consola Interactiva QA</span>
-      </div>
+      <span class="section-kicker qa-kicker" data-testid="test-runner-kicker">Consola Interactiva QA</span>
       <h2 class="section-title">
         Live Test Runner: <span class="gradient-text-qa">Vitest & Cypress</span>
       </h2>
@@ -194,13 +191,13 @@ const { isRunningTests, testProgress, testSuite, runAllTests } = useQaMode();
   display: inline-flex;
   align-items: center;
   gap: 0.45rem;
-  padding: 0.4rem 0.9rem;
+  padding: 0.4rem 0.95rem;
   border-radius: var(--radius-pill);
-  background: rgba(16, 185, 129, 0.15);
-  border: 1px solid rgba(16, 185, 129, 0.35);
+  background: rgba(16, 185, 129, 0.12);
+  border: 1px solid rgba(16, 185, 129, 0.3);
   color: var(--accent-qa-light);
-  font-family: var(--font-mono);
-  font-size: 0.78rem;
+  font-family: var(--font-sans);
+  font-size: 0.8rem;
   font-weight: 600;
   cursor: pointer;
   transition: all var(--transition-fast);
@@ -234,8 +231,8 @@ const { isRunningTests, testProgress, testSuite, runAllTests } = useQaMode();
   padding: 0.75rem 1.4rem;
   background: rgba(10, 16, 30, 0.8);
   border-bottom: 1px solid rgba(255, 255, 255, 0.04);
-  font-family: var(--font-mono);
-  font-size: 0.78rem;
+  font-family: var(--font-sans);
+  font-size: 0.82rem;
   flex-wrap: wrap;
 }
 

@@ -2,10 +2,7 @@
   <section id="contact" class="contact-section" data-testid="contact-section">
     <!-- Header -->
     <div class="section-header">
-      <div class="section-pill" data-testid="contact-pill">
-        <Mail :size="16" />
-        <span>Hablemos de Oportunidades</span>
-      </div>
+      <span class="section-kicker" data-testid="contact-kicker">Hablemos de Oportunidades</span>
       <h2 class="section-title">
         ¿Listo para llevar tu producto al <span class="gradient-text">Siguiente Nivel</span>?
       </h2>
@@ -320,8 +317,10 @@ const handleSubmit = () => {
 .channel-label {
   font-size: 0.78rem;
   color: var(--text-muted);
-  font-family: var(--font-mono);
+  font-family: var(--font-sans);
+  font-weight: 500;
   text-transform: uppercase;
+  letter-spacing: 0.03em;
 }
 
 .channel-value {
@@ -341,7 +340,8 @@ const handleSubmit = () => {
   border: 1px solid var(--border-subtle);
   color: var(--text-secondary);
   font-size: 0.78rem;
-  font-family: var(--font-mono);
+  font-family: var(--font-sans);
+  font-weight: 600;
   cursor: pointer;
   transition: all var(--transition-fast);
 }

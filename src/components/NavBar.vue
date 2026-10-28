@@ -6,10 +6,7 @@
         <span class="brand-monogram">GP</span>
         <div class="brand-info">
           <span class="brand-name">José Guillermo Paúl</span>
-          <span class="brand-role">
-            <span class="status-dot"></span>
-            Frontend & QA Engineer
-          </span>
+          <span class="brand-role">Frontend & QA Engineer</span>
         </div>
       </a>
 
@@ -195,19 +192,19 @@ onUnmounted(() => {
 }
 
 .brand-monogram {
-  width: 38px;
-  height: 38px;
+  width: 36px;
+  height: 36px;
   display: flex;
   align-items: center;
   justify-content: center;
   border-radius: var(--radius-sm);
-  background: linear-gradient(135deg, rgba(56, 189, 248, 0.2), rgba(16, 185, 129, 0.2));
-  border: 1px solid rgba(56, 189, 248, 0.35);
-  font-family: var(--font-mono);
-  font-weight: 800;
-  font-size: 0.95rem;
-  color: var(--primary);
-  box-shadow: 0 0 14px rgba(56, 189, 248, 0.2);
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  font-family: var(--font-sans);
+  font-weight: 700;
+  font-size: 0.92rem;
+  color: var(--text-main);
+  transition: all var(--transition-smooth);
 }
 
 .brand-info {
@@ -217,32 +214,17 @@ onUnmounted(() => {
 
 .brand-name {
   font-weight: 700;
-  font-size: 1rem;
+  font-size: 0.98rem;
   color: var(--text-main);
   line-height: 1.2;
 }
 
 .brand-role {
-  display: flex;
-  align-items: center;
-  gap: 0.35rem;
-  font-size: 0.76rem;
-  font-family: var(--font-mono);
+  display: block;
+  font-size: 0.78rem;
+  font-family: var(--font-sans);
+  font-weight: 500;
   color: var(--text-muted);
-}
-
-.status-dot {
-  width: 6px;
-  height: 6px;
-  border-radius: 50%;
-  background: var(--accent-qa);
-  box-shadow: 0 0 8px var(--accent-qa);
-  animation: pulseDot 2s infinite ease-in-out;
-}
-
-@keyframes pulseDot {
-  0%, 100% { opacity: 1; transform: scale(1); }
-  50% { opacity: 0.4; transform: scale(0.85); }
 }
 
 /* Nav Links */
@@ -302,7 +284,8 @@ onUnmounted(() => {
   border: 1px solid var(--border-subtle);
   color: var(--text-secondary);
   font-size: 0.82rem;
-  font-family: var(--font-mono);
+  font-family: var(--font-sans);
+  font-weight: 600;
   cursor: pointer;
   transition: all var(--transition-smooth);
   white-space: nowrap;
@@ -421,7 +404,7 @@ onUnmounted(() => {
 
 .mobile-qa-sub {
   font-size: 0.74rem;
-  font-family: var(--font-mono);
+  font-family: var(--font-sans);
   color: var(--text-muted);
 }
 

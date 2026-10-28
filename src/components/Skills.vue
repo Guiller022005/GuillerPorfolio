@@ -2,10 +2,7 @@
   <section id="skills" class="skills-section" data-testid="skills-section">
     <!-- Header -->
     <div class="section-header">
-      <div class="section-pill" data-testid="skills-section-pill">
-        <Sparkles :size="16" />
-        <span>Stack Tecnológico & Calidad</span>
-      </div>
+      <span class="section-kicker" data-testid="skills-section-kicker">Stack Tecnológico & Calidad</span>
       <h2 class="section-title">
         Arsenal de <span class="gradient-text">Frontend</span> & <span class="gradient-text-qa">QA Testing</span>
       </h2>
@@ -75,7 +72,6 @@
 <script setup lang="ts">
 import { ref, computed } from 'vue';
 import { 
-  Sparkles, 
   Code2, 
   ShieldCheck, 
   Server, 
@@ -363,7 +359,8 @@ const getCategoryCount = (catId: string) => {
 }
 
 .tab-count {
-  font-family: var(--font-mono);
+  font-family: var(--font-sans);
+  font-weight: 600;
   font-size: 0.74rem;
   padding: 0.1rem 0.45rem;
   border-radius: var(--radius-pill);
@@ -437,8 +434,8 @@ const getCategoryCount = (catId: string) => {
 }
 
 .skill-badge {
-  font-family: var(--font-mono);
-  font-size: 0.72rem;
+  font-family: var(--font-sans);
+  font-size: 0.74rem;
   font-weight: 600;
   padding: 0.25rem 0.65rem;
   border-radius: var(--radius-pill);
@@ -486,14 +483,16 @@ const getCategoryCount = (catId: string) => {
 .skill-highlight-tag {
   display: inline-flex;
   align-items: center;
-  gap: 0.4rem;
-  font-size: 0.76rem;
-  font-family: var(--font-mono);
-  color: var(--text-muted);
+  gap: 0.45rem;
+  font-size: 0.8rem;
+  font-family: var(--font-sans);
+  font-weight: 500;
+  color: #CBD5E1;
 }
 
 .highlight-check {
   color: var(--accent-qa-light);
+  flex-shrink: 0;
 }
 
 @media (max-width: 768px) {

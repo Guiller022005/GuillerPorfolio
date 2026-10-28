@@ -2,10 +2,7 @@
   <section id="qa-advantage" class="qa-advantage-section" data-testid="qa-advantage-section">
     <!-- Header -->
     <div class="section-header">
-      <div class="section-pill qa-pill" data-testid="qa-section-pill">
-        <ShieldCheck :size="16" />
-        <span>Factor Diferencial</span>
-      </div>
+      <span class="section-kicker qa-kicker" data-testid="qa-section-kicker">Factor Diferencial</span>
       <h2 class="section-title">
         La Ventaja Híbrida: <span class="gradient-text-qa">Frontend + QA</span>
       </h2>
@@ -240,7 +237,8 @@ const comparisons = [
 }
 
 .pillar-tag {
-  font-family: var(--font-mono);
+  font-family: var(--font-sans);
+  font-weight: 500;
   font-size: 0.76rem;
   color: var(--text-muted);
   background: rgba(255, 255, 255, 0.04);
@@ -272,7 +270,8 @@ const comparisons = [
 }
 
 .tool-badge {
-  font-family: var(--font-mono);
+  font-family: var(--font-sans);
+  font-weight: 500;
   font-size: 0.76rem;
   padding: 0.25rem 0.65rem;
   border-radius: var(--radius-xs);
@@ -428,8 +427,8 @@ const comparisons = [
 }
 
 .mobile-comp-badge {
-  font-family: var(--font-mono);
-  font-size: 0.7rem;
+  font-family: var(--font-sans);
+  font-size: 0.72rem;
   font-weight: 700;
   text-transform: uppercase;
   letter-spacing: 0.04em;
