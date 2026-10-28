@@ -117,7 +117,7 @@ import { ExternalLink, Github, ShieldCheck } from 'lucide-vue-next';
 import spinAppPng from '../assets/spinApp.png';
 import ecomercePng from '../assets/ecomerce.png';
 import spaceXPng from '../assets/spaceX.png';
-import foodSitePng from '../assets/foodSite.png';
+import papadogJpg from '../assets/papadog.jpg';
 
 type ProjectCategory = 'all' | 'frontend' | 'fullstack' | 'api';
 
@@ -185,16 +185,15 @@ const projects = ref<Project[]>([
     tags: ['REST API', 'Async / Await', 'Dynamic Data Filtering', 'Modern CSS']
   },
   {
-    id: 'foods-gourmet',
-    title: 'Foods & Gourmet Gastronomy',
+    id: 'papadog-restaurant',
+    title: 'Papadog — Menú Digital & Landing Page Gastronómica',
     category: 'frontend',
-    categoryName: 'Frontend UI',
-    description: 'Sitio gastronómico interactivo con catálogo de recetas y platillos, filtrado ágil de ingredientes, animaciones de interfaz y experiencia de usuario fluida.',
-    qaHighlight: 'Optimización de Core Web Vitals (imágenes fluidas, LCP), pruebas de navegación por teclado y contraste accesible WCAG AA.',
-    image: foodSitePng,
-    url: 'https://guiller022005.github.io/proyectoWeb/',
-    githubUrl: 'https://github.com/Guiller022005/proyectoWeb',
-    tags: ['Frontend UI', 'Flexbox / Grid', 'UX Micro-animations', 'A11y Checked']
+    categoryName: 'Web App & Menú Digital',
+    description: 'Landing page y carta digital interactiva para restaurante de comida rápida premium en Piedecuesta. Incluye catálogo visual de platillos (perros calientes, smash burgers, combos), filtrado reactivo por categorías, promociones destacadas y canal directo de pedidos hacia WhatsApp.',
+    qaHighlight: 'Arquitectura responsiva mobile-first, optimización de assets e imágenes de alta resolución, integración fluida de checkout vía WhatsApp y verificación de accesibilidad UI.',
+    image: papadogJpg,
+    url: 'https://papadog-landing-page.vercel.app',
+    tags: ['Next.js', 'React', 'Tailwind CSS', 'Mobile First', 'WhatsApp Order Flow']
   }
 ]);
 
