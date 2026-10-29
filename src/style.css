@@ -350,30 +350,74 @@ h1, h2, h3, h4, h5, h6 {
   transform: translateY(-2px);
 }
 
-/* QA INSPECTOR MODE (Overlay when toggled) */
+/* QA INSPECTOR MODE (DevTools / Locator Picker Style) */
 .qa-inspector-active [data-testid] {
-  outline: 1.5px dashed var(--accent-qa) !important;
+  outline: 1.5px dashed rgba(16, 185, 129, 0.45) !important;
   outline-offset: 3px;
   position: relative;
+  transition: outline-color var(--transition-fast), background-color var(--transition-fast);
 }
 
+.qa-inspector-active [data-testid]:hover {
+  outline: 1.5px solid var(--accent-qa) !important;
+  background-color: rgba(16, 185, 129, 0.04);
+}
+
+/* Tooltip locator tag - hidden by default to NEVER obstruct the page's text */
 .qa-inspector-active [data-testid]::after {
   content: attr(data-testid);
   position: absolute;
-  top: -10px;
+  bottom: calc(100% + 5px);
   right: 4px;
   background: #040810;
-  color: var(--accent-qa);
+  color: var(--accent-qa-light);
   border: 1px solid var(--accent-qa);
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.75), 0 0 8px rgba(16, 185, 129, 0.3);
   font-family: var(--font-mono);
-  font-size: 0.65rem;
-  padding: 1px 6px;
-  border-radius: 4px;
-  pointer-events: none;
-  z-index: 100;
-  white-space: nowrap;
+  font-size: 0.68rem;
   font-weight: 600;
   letter-spacing: 0.02em;
+  padding: 2px 7px;
+  border-radius: 4px;
+  pointer-events: none;
+  white-space: nowrap;
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(3px);
+  transition: opacity 0.15s ease, transform 0.15s ease, visibility 0.15s ease;
+  z-index: 1000;
+}
+
+/* Reveal locator badge exclusively on hover/focus */
+.qa-inspector-active [data-testid]:hover::after,
+.qa-inspector-active [data-testid]:focus-visible::after {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+}
+
+/* When hovering a child element, suppress the parent's badge so they NEVER stack */
+.qa-inspector-active [data-testid]:hover:has([data-testid]:hover)::after {
+  opacity: 0;
+  visibility: hidden;
+}
+
+/* Allow badges to float outside cards and terminal without clipping */
+.qa-inspector-active .glass-card,
+.qa-inspector-active .terminal-container {
+  overflow: visible !important;
+}
+
+/* For elements located near the top edge (navbar, header, banner), position tooltip below */
+.qa-inspector-active header [data-testid]::after,
+.qa-inspector-active [data-testid="navbar"]::after,
+.qa-inspector-active [data-testid="nav-brand"]::after,
+.qa-inspector-active [data-testid="nav-links-desktop"]::after,
+.qa-inspector-active [data-testid="qa-mode-toggle"]::after,
+.qa-inspector-active [data-testid="nav-cta-contact"]::after,
+.qa-inspector-active [data-testid="qa-active-banner"]::after {
+  bottom: auto;
+  top: calc(100% + 6px);
 }
 
 /* Footer Styling */

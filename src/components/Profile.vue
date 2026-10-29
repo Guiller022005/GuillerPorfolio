@@ -73,17 +73,39 @@
             <div class="avatar-footer">
               <h2 class="avatar-name">José Guillermo Paúl</h2>
               <p class="avatar-title">Frontend Developer · QA Automation</p>
-              
-              <div class="avatar-tags">
-                <span class="avatar-tag">
-                  <CheckCircle2 :size="13" class="tag-icon-emerald" />
-                  <span>Suites Cypress & Vitest</span>
-                </span>
-                <span class="avatar-tag">
-                  <Code2 :size="13" class="tag-icon-cyan" />
-                  <span>Vue 3 & TypeScript</span>
-                </span>
-              </div>
+            </div>
+          </div>
+
+          <!-- Floating Badge 1: QA Tests Passing -->
+          <div class="floating-chip chip-top-right" data-testid="hero-chip-qa">
+            <div class="chip-icon-box chip-emerald">
+              <CheckCircle2 :size="16" />
+            </div>
+            <div class="chip-text">
+              <span class="chip-main">42/42 Tests Passing</span>
+              <span class="chip-sub">Cypress & Vitest Suites</span>
+            </div>
+          </div>
+
+          <!-- Floating Badge 2: Tech Stack -->
+          <div class="floating-chip chip-bottom-left" data-testid="hero-chip-tech">
+            <div class="chip-icon-box chip-cyan">
+              <Code2 :size="16" />
+            </div>
+            <div class="chip-text">
+              <span class="chip-main">Vue 3 • TypeScript</span>
+              <span class="chip-sub">Componentes Testables</span>
+            </div>
+          </div>
+
+          <!-- Floating Badge 3: Lighthouse Score -->
+          <div class="floating-chip chip-bottom-right" data-testid="hero-chip-score">
+            <div class="chip-icon-box chip-purple">
+              <Sparkles :size="16" />
+            </div>
+            <div class="chip-text">
+              <span class="chip-main">100% Accesible</span>
+              <span class="chip-sub">Core Web Vitals A+</span>
             </div>
           </div>
         </div>
@@ -93,7 +115,7 @@
 </template>
 
 <script setup lang="ts">
-import { ArrowRight, Terminal, Mail, CheckCircle2, Code2 } from 'lucide-vue-next';
+import { ArrowRight, Terminal, Mail, CheckCircle2, Code2, Sparkles } from 'lucide-vue-next';
 </script>
 
 <style scoped>
@@ -287,32 +309,89 @@ import { ArrowRight, Terminal, Mail, CheckCircle2, Code2 } from 'lucide-vue-next
   margin-bottom: 0.75rem;
 }
 
-.avatar-tags {
+/* Floating Badges */
+.floating-chip {
+  position: absolute;
+  z-index: 4;
+  background: rgba(10, 16, 30, 0.9);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: var(--radius-md);
+  padding: 0.55rem 0.85rem;
   display: flex;
-  gap: 0.5rem;
-  justify-content: center;
-  flex-wrap: wrap;
-}
-
-.avatar-tag {
-  display: inline-flex;
   align-items: center;
-  gap: 0.35rem;
-  padding: 0.25rem 0.65rem;
-  border-radius: var(--radius-pill);
-  background: rgba(255, 255, 255, 0.04);
-  border: 1px solid var(--border-subtle);
-  font-size: 0.74rem;
-  font-weight: 500;
-  color: var(--text-secondary);
+  gap: 0.65rem;
+  box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.5);
+  animation: floatChip 5s infinite ease-in-out alternate;
 }
 
-.tag-icon-emerald {
-  color: #34D399;
+.chip-top-right {
+  top: 20px;
+  right: -25px;
+  animation-delay: 0s;
 }
 
-.tag-icon-cyan {
-  color: #38BDF8;
+.chip-bottom-left {
+  bottom: 70px;
+  left: -35px;
+  animation-delay: -2s;
+}
+
+.chip-bottom-right {
+  bottom: -15px;
+  right: -15px;
+  animation-delay: -3.5s;
+}
+
+@keyframes floatChip {
+  0% { transform: translateY(0); }
+  100% { transform: translateY(-8px); }
+}
+
+.chip-icon-box {
+  width: 30px;
+  height: 30px;
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.chip-emerald {
+  background: rgba(16, 185, 129, 0.2);
+  color: var(--accent-qa-light);
+  border: 1px solid rgba(16, 185, 129, 0.4);
+}
+
+.chip-cyan {
+  background: rgba(56, 189, 248, 0.2);
+  color: var(--primary);
+  border: 1px solid rgba(56, 189, 248, 0.4);
+}
+
+.chip-purple {
+  background: rgba(129, 140, 248, 0.2);
+  color: var(--accent-purple);
+  border: 1px solid rgba(129, 140, 248, 0.4);
+}
+
+.chip-text {
+  display: flex;
+  flex-direction: column;
+}
+
+.chip-main {
+  font-size: 0.78rem;
+  font-weight: 700;
+  color: var(--text-main);
+  line-height: 1.2;
+}
+
+.chip-sub {
+  font-size: 0.68rem;
+  color: var(--text-muted);
+  font-family: var(--font-mono);
 }
 
 /* Responsive */
@@ -347,6 +426,14 @@ import { ArrowRight, Terminal, Mail, CheckCircle2, Code2 } from 'lucide-vue-next
   .image-frame {
     height: 320px;
   }
+
+  .chip-top-right {
+    right: -10px;
+  }
+
+  .chip-bottom-left {
+    left: -10px;
+  }
 }
 
 @media (max-width: 640px) {
@@ -361,6 +448,21 @@ import { ArrowRight, Terminal, Mail, CheckCircle2, Code2 } from 'lucide-vue-next
 
   .hero-actions a {
     width: 100%;
+  }
+
+  .chip-top-right,
+  .chip-bottom-left,
+  .chip-bottom-right {
+    position: static;
+    margin-top: 0.5rem;
+    animation: none;
+    width: 100%;
+  }
+
+  .avatar-card-wrapper {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
   }
 }
 </style>

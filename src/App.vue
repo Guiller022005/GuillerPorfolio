@@ -15,7 +15,7 @@
           <div class="banner-left">
             <span class="banner-badge">QA INSPECTOR MODE</span>
             <span class="banner-text">
-              Mostrando etiquetas <code>[data-testid]</code>, contratos de componentes y aserciones activas.
+              Pasa el cursor sobre cualquier componente para inspeccionar sus selectores <code>[data-testid]</code> y contratos.
             </span>
           </div>
           <div class="banner-actions">
