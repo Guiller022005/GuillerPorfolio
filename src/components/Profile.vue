@@ -72,7 +72,7 @@
             
             <div class="avatar-footer">
               <h2 class="avatar-name">José Guillermo Paúl Díaz</h2>
-              <p class="avatar-title">Frontend Developer · QA Automation</p>
+              <p class="avatar-title">Frontend Developer</p>
             </div>
           </div>
 
@@ -317,13 +317,17 @@ import { ArrowRight, Terminal, Mail, CheckCircle2, Code2, Sparkles } from 'lucid
   font-size: 1.15rem;
   font-weight: 700;
   color: var(--text-main);
+  white-space: nowrap;
 }
 
 .avatar-title {
   font-size: 0.82rem;
   color: var(--primary);
   font-family: var(--font-mono);
-  margin-top: 0.2rem;
+  margin-top: 0.25rem;
+  text-align: left;
+  padding-left: 0.5rem;
+  white-space: nowrap;
 }
 
 /* Floating Badges */
