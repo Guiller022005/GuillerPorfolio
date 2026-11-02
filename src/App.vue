@@ -8,22 +8,25 @@
       <div class="ambient-orb ambient-orb-3"></div>
     </div>
 
-    <!-- QA Mode Floating Banner (When Active) -->
-    <transition name="slide-banner">
-      <div v-if="isQaMode" class="qa-active-banner" data-testid="qa-active-banner">
-        <div class="banner-inner">
-          <div class="banner-left">
-            <span class="banner-badge">QA INSPECTOR MODE</span>
-            <span class="banner-text">
-              Pasa el cursor sobre cualquier componente para inspeccionar sus selectores <code>[data-testid]</code> y contratos.
-            </span>
-          </div>
-          <div class="banner-actions">
-            <a href="#test-runner" class="banner-link">Ver Test Suite</a>
-            <button @click="toggleQaMode" class="banner-close-btn" aria-label="Desactivar modo QA">
-              ✕ Desactivar
-            </button>
-          </div>
+    <!-- QA Mode Floating DevTools Dock (When Active) -->
+    <transition name="dock-fade">
+      <div v-if="isQaMode" class="qa-floating-dock" data-testid="qa-active-banner">
+        <div class="dock-indicator">
+          <span class="dock-pulse"></span>
+          <span class="dock-badge">QA INSPECTOR</span>
+        </div>
+        
+        <span class="dock-hint">
+          Modo inspección activo: inspecciona <code>[data-testid]</code>
+        </span>
+
+        <div class="dock-actions">
+          <a href="#test-runner" class="dock-btn-secondary" title="Ir a la suite de tests">
+            <span>Test Suite</span>
+          </a>
+          <button @click="toggleQaMode" class="dock-btn-close" aria-label="Desactivar modo QA" title="Cerrar modo QA">
+            ✕
+          </button>
         </div>
       </div>
     </transition>
@@ -99,95 +102,148 @@ const currentYear = computed(() => new Date().getFullYear());
 </script>
 
 <style scoped>
-.qa-active-banner {
+/* QA Inspector Floating Dock (Floating Pill / DevTools Widget) */
+.qa-floating-dock {
   position: fixed;
-  top: 66px;
-  left: 0;
-  right: 0;
-  background: rgba(16, 185, 129, 0.95);
-  backdrop-filter: blur(12px);
-  color: #040810;
-  z-index: 999;
-  padding: 0.55rem 1.5rem;
-  box-shadow: 0 4px 20px rgba(16, 185, 129, 0.35);
+  bottom: 24px;
+  right: 24px;
+  background: rgba(10, 16, 30, 0.92);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(16, 185, 129, 0.4);
+  box-shadow: 0 10px 30px -5px rgba(0, 0, 0, 0.7), 0 0 20px rgba(16, 185, 129, 0.2);
+  border-radius: var(--radius-pill);
+  padding: 0.5rem 0.65rem 0.5rem 1rem;
+  display: flex;
+  align-items: center;
+  gap: 0.9rem;
+  z-index: 9999;
   font-family: var(--font-sans);
-  font-size: 0.82rem;
+  color: var(--text-main);
+  transition: all var(--transition-smooth);
 }
 
-.banner-inner {
-  max-width: 1240px;
-  margin: 0 auto;
+.qa-floating-dock:hover {
+  border-color: var(--accent-qa);
+  box-shadow: 0 12px 35px -5px rgba(0, 0, 0, 0.8), 0 0 25px rgba(16, 185, 129, 0.35);
+}
+
+.dock-indicator {
   display: flex;
   align-items: center;
-  justify-content: space-between;
-  gap: 1rem;
-  flex-wrap: wrap;
+  gap: 0.5rem;
 }
 
-.banner-left {
-  display: flex;
-  align-items: center;
-  gap: 0.75rem;
-  flex-wrap: wrap;
+.dock-pulse {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: var(--accent-qa);
+  box-shadow: 0 0 8px var(--accent-qa);
+  animation: pulseDot 2s infinite ease-in-out;
 }
 
-.banner-badge {
-  background: #040810;
+@keyframes pulseDot {
+  0%, 100% { opacity: 1; transform: scale(1); }
+  50% { opacity: 0.4; transform: scale(0.85); }
+}
+
+.dock-badge {
+  background: rgba(16, 185, 129, 0.15);
   color: var(--accent-qa-light);
-  font-weight: 800;
-  padding: 0.2rem 0.6rem;
-  border-radius: 4px;
-  font-size: 0.72rem;
-  letter-spacing: 0.05em;
+  border: 1px solid rgba(16, 185, 129, 0.3);
+  font-family: var(--font-mono);
+  font-size: 0.68rem;
+  font-weight: 700;
+  padding: 0.2rem 0.5rem;
+  border-radius: var(--radius-pill);
+  letter-spacing: 0.04em;
 }
 
-.banner-text code {
-  background: rgba(4, 8, 16, 0.15);
+.dock-hint {
+  font-size: 0.78rem;
+  color: var(--text-secondary);
+}
+
+.dock-hint code {
+  color: var(--accent-qa-light);
+  background: rgba(16, 185, 129, 0.1);
   padding: 1px 5px;
   border-radius: 4px;
-  font-weight: 700;
   font-family: var(--font-mono);
+  font-size: 0.72rem;
 }
 
-.banner-actions {
+.dock-actions {
   display: flex;
   align-items: center;
-  gap: 0.75rem;
+  gap: 0.45rem;
+  margin-left: 0.25rem;
 }
 
-.banner-link {
-  color: #040810;
-  font-weight: 800;
-  text-decoration: underline;
-  cursor: pointer;
-}
-
-.banner-close-btn {
-  background: rgba(4, 8, 16, 0.2);
-  border: 1px solid rgba(4, 8, 16, 0.3);
-  color: #040810;
-  padding: 0.2rem 0.6rem;
-  border-radius: var(--radius-pill);
-  font-family: var(--font-sans);
+.dock-btn-secondary {
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid var(--border-subtle);
+  color: var(--text-main);
+  text-decoration: none;
   font-size: 0.75rem;
-  font-weight: 700;
+  font-weight: 600;
+  padding: 0.35rem 0.75rem;
+  border-radius: var(--radius-pill);
+  transition: all var(--transition-fast);
+}
+
+.dock-btn-secondary:hover {
+  background: rgba(56, 189, 248, 0.2);
+  border-color: var(--primary);
+  color: var(--primary-light);
+}
+
+.dock-btn-close {
+  background: rgba(255, 255, 255, 0.06);
+  border: 1px solid var(--border-subtle);
+  color: var(--text-muted);
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.75rem;
   cursor: pointer;
+  transition: all var(--transition-fast);
 }
 
-.banner-close-btn:hover {
-  background: #040810;
-  color: #FFFFFF;
+.dock-btn-close:hover {
+  background: rgba(239, 68, 68, 0.2);
+  border-color: rgba(239, 68, 68, 0.5);
+  color: #FCA5A5;
 }
 
-.slide-banner-enter-active,
-.slide-banner-leave-active {
-  transition: all 0.3s ease;
+/* Dock Animations */
+.dock-fade-enter-active,
+.dock-fade-leave-active {
+  transition: all 0.35s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
-.slide-banner-enter-from,
-.slide-banner-leave-to {
+.dock-fade-enter-from,
+.dock-fade-leave-to {
   opacity: 0;
-  transform: translateY(-100%);
+  transform: translateY(20px) scale(0.95);
+}
+
+@media (max-width: 768px) {
+  .qa-floating-dock {
+    bottom: 16px;
+    right: 16px;
+    left: 16px;
+    justify-content: space-between;
+    padding: 0.45rem 0.6rem 0.45rem 0.8rem;
+  }
+  
+  .dock-hint {
+    display: none;
+  }
 }
 
 .back-to-top {

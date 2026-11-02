@@ -355,12 +355,12 @@ h1, h2, h3, h4, h5, h6 {
   outline: 1.5px dashed rgba(16, 185, 129, 0.45) !important;
   outline-offset: 3px;
   position: relative;
-  transition: outline-color var(--transition-fast), background-color var(--transition-fast);
+  transition: outline-color var(--transition-fast), box-shadow var(--transition-fast);
 }
 
 .qa-inspector-active [data-testid]:hover {
   outline: 1.5px solid var(--accent-qa) !important;
-  background-color: rgba(16, 185, 129, 0.04);
+  box-shadow: 0 0 16px rgba(16, 185, 129, 0.15);
 }
 
 /* Tooltip locator tag - hidden by default to NEVER obstruct the page's text */

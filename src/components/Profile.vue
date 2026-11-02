@@ -122,7 +122,7 @@ import { ArrowRight, Terminal, Mail, CheckCircle2, Code2, Sparkles } from 'lucid
 .hero-section {
   padding: 3rem 0 5rem;
   position: relative;
-  overflow-x: clip;
+  overflow: visible;
 }
 
 .hero-grid {
@@ -230,12 +230,29 @@ import { ArrowRight, Terminal, Mail, CheckCircle2, Code2, Sparkles } from 'lucid
 
 .avatar-aura {
   position: absolute;
-  inset: -12px;
-  background: radial-gradient(circle, rgba(56, 189, 248, 0.18) 0%, rgba(16, 185, 129, 0.1) 70%, transparent 100%);
+  inset: -16px;
+  background: conic-gradient(
+    from 180deg at 50% 50%,
+    #38BDF8 0deg,
+    #0284C7 60deg,
+    #10B981 140deg,
+    #818CF8 240deg,
+    #38BDF8 360deg
+  );
   border-radius: var(--radius-xl);
-  filter: blur(32px);
-  opacity: 0.6;
+  filter: blur(28px);
+  opacity: 0.65;
   z-index: 1;
+  animation: rotateAura 18s linear infinite;
+}
+
+@keyframes rotateAura {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
 }
 
 .avatar-glass-card {
