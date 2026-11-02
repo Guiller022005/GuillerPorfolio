@@ -5,7 +5,7 @@
       <a href="#profile" class="nav-brand" data-testid="nav-brand">
         <span class="brand-monogram">GP</span>
         <div class="brand-info">
-          <span class="brand-name">José Guillermo Paúl</span>
+          <span class="brand-name">José Guillermo Paúl Díaz</span>
           <span class="brand-role">Frontend & QA Engineer</span>
         </div>
       </a>

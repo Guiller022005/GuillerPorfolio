@@ -71,7 +71,7 @@
             </div>
             
             <div class="avatar-footer">
-              <h2 class="avatar-name">José Guillermo Paúl</h2>
+              <h2 class="avatar-name">José Guillermo Paúl Díaz</h2>
               <p class="avatar-title">Frontend Developer · QA Automation</p>
             </div>
           </div>
@@ -309,6 +309,8 @@ import { ArrowRight, Terminal, Mail, CheckCircle2, Code2, Sparkles } from 'lucid
   background: rgba(8, 12, 22, 0.92);
   border-top: 1px solid var(--border-subtle);
   text-align: center;
+  position: relative;
+  z-index: 5;
 }
 
 .avatar-name {
@@ -318,18 +320,16 @@ import { ArrowRight, Terminal, Mail, CheckCircle2, Code2, Sparkles } from 'lucid
 }
 
 .avatar-title {
-  font-size: 0.84rem;
-  color: var(--text-secondary);
-  font-weight: 500;
-  font-family: var(--font-sans);
+  font-size: 0.82rem;
+  color: var(--primary);
+  font-family: var(--font-mono);
   margin-top: 0.2rem;
-  margin-bottom: 0.75rem;
 }
 
 /* Floating Badges */
 .floating-chip {
   position: absolute;
-  z-index: 4;
+  z-index: 10;
   background: rgba(10, 16, 30, 0.9);
   backdrop-filter: blur(14px);
   -webkit-backdrop-filter: blur(14px);
@@ -350,14 +350,14 @@ import { ArrowRight, Terminal, Mail, CheckCircle2, Code2, Sparkles } from 'lucid
 }
 
 .chip-bottom-left {
-  bottom: 70px;
-  left: -35px;
+  bottom: 80px;
+  left: -28px;
   animation-delay: -2s;
 }
 
 .chip-bottom-right {
   bottom: -15px;
-  right: -15px;
+  right: -20px;
   animation-delay: -3.5s;
 }
 
